@@ -10,3 +10,11 @@ jobs:
         run: pwd
       - name: List Files and Dir
         run: ls -al
+      - name: Running Multi Line Shell Commands
+        run: |
+            docker images
+            if [ $? -eq 0 ]; then
+              echo "Docker is installed"
+            else
+              echo "Docker not installed"
+            fi
